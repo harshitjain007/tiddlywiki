@@ -377,6 +377,12 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla</li>
 
+<li>$:/view</li>
+
+<li>New Tiddler</li>
+
+<li>New Tiddler 1</li>
+
 </ul>
 </p>
 
@@ -9768,16 +9774,16 @@ Error message and password prompt
 <pre>GettingStarted
 aaaa</pre>
 </div>
-<div created="20200612115117761" modified="20200612161222272" title="$:/GitHub/Branch">
+<div created="20200612115117761" modified="20200612161928207" title="$:/GitHub/Branch">
 <pre>master</pre>
 </div>
 <div created="20200612115120145" modified="20200612115122020" title="$:/GitHub/Filename">
 <pre>index.html</pre>
 </div>
-<div created="20200612161224519" modified="20200612161224519" title="$:/GitHub/Path">
+<div created="20200612161928630" modified="20200612161933455" title="$:/GitHub/Path">
 <pre>/</pre>
 </div>
-<div created="20200612115106658" modified="20200612161219152" title="$:/GitHub/Repo">
+<div created="20200612115106658" modified="20200612161923822" title="$:/GitHub/Repo">
 <pre>harshitjain007/tiddlywiki</pre>
 </div>
 <div created="20200612115056121" modified="20200612115058265" title="$:/GitHub/Username">
@@ -9786,14 +9792,14 @@ aaaa</pre>
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div created="20200612125351476" modified="20200612161404113" title="$:/palette">
+<div created="20200612125351476" modified="20200612161840385" title="$:/palette">
 <pre>$:/palettes/Blanca</pre>
 </div>
-<div created="20200612125343899" modified="20200612125346455" title="$:/state/tab--1963855381">
-<pre>$:/core/ui/ControlPanel/Palette</pre>
+<div created="20200612125343899" modified="20200612161843177" title="$:/state/tab--1963855381">
+<pre>$:/core/ui/ControlPanel/StoryView</pre>
 </div>
-<div created="20200612115052271" modified="20200612161355669" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Appearance</pre>
+<div created="20200612115052271" modified="20200612161906304" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Saving</pre>
 </div>
 <div created="20200612115053331" modified="20200612115053331" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
@@ -9801,7 +9807,7 @@ aaaa</pre>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20200612161159243" list="$:/ControlPanel" modified="20200612161159243" title="$:/StoryList">
+<div created="20200612162104745" list="[[New Tiddler 1]] GettingStarted aaaa" modified="20200612162104745" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -10923,6 +10929,15 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
         }
     }
 }</pre>
+</div>
+<div created="20200612161845871" modified="20200612161845871" title="$:/view">
+<pre>pop</pre>
+</div>
+<div created="20200612161824834" modified="20200612161827797" tags="" title="New Tiddler">
+<pre></pre>
+</div>
+<div created="20200612161831867" modified="20200612162110976" tags="" title="New Tiddler 1">
+<pre></pre>
 </div>
 
 
@@ -12249,7 +12264,7 @@ $tw.Wiki = function(options) {
 				var index = tiddlerTitles.indexOf(title);
 				if(index !== -1) {
 					tiddlerTitles.splice(index,1);
-				}				
+				}
 			}
 			// Record the new tiddler state
 			updateDescriptor["new"] = {
@@ -12396,7 +12411,7 @@ $tw.Wiki = function(options) {
 				}
 			} else {
 				if(pluginInfo[title]) {
-					delete pluginInfo[title];					
+					delete pluginInfo[title];
 					results.deletedPlugins.push(title);
 				}
 			}
@@ -13275,7 +13290,7 @@ $tw.loadTiddlersNode = function() {
 				type = parts[0];
 			if(parts.length  === 3 && ["plugins","themes","languages"].indexOf(type) !== -1) {
 				$tw.loadPlugins([parts[1] + "/" + parts[2]],$tw.config[type + "Path"],$tw.config[type + "EnvVar"]);
-			}			
+			}
 		}
 	});
 	// Load the tiddlers from the wiki directory
